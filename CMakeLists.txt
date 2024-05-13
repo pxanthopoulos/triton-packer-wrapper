@@ -4,7 +4,7 @@ project(triton_packer)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(LLVM_DIR "/usr/lib/llvm-16/lib/cmake/llvm")
+set(LLVM_DIR "/usr/lib/llvm-14/lib/cmake/llvm")
 
 find_package(LLVM REQUIRED CONFIG)
 include_directories(${LLVM_INCLUDE_DIRS})
