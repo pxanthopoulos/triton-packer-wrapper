@@ -107,7 +107,7 @@ namespace mlir
         if (!file.is_open())
         {
             std::cerr << "Error: Unable to open file " << filepath << std::endl;
-            return;
+            exit(1);
         }
 
         std::string header;
