@@ -322,14 +322,7 @@ namespace mlir
 
         auto end = std::chrono::high_resolution_clock::now();
         auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
-        std::ofstream timefile(path_string + "/" + "time/time.csv", std::ios::app);
-        if (timefile.is_open()) {
-            timefile << duration.count() << ",";
-            timefile.close();
-        } else {
-            std::cout << "Could not open file" << path_string + "/" + "time/time.csv"
-                      << std::endl;
-        }
+        std::cout << duration.count();
 
         std::string filename = std::string(name) + "-out.csv";
         std::string new_path =
@@ -352,6 +345,7 @@ namespace mlir
         {
             std::cout << "Could not open file: " << new_path << filename
                       << std::endl;
+            exit(1);
         }
     }
 }
